@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+    padding: 20px;
+}
+
+body > div {
+    background: white;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.login-box {
+    max-width: 350px;
+    margin-top: 60px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+th, button {
+    background: #007bff;
+    color: white;
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+}
+
+a[href*="hapus"], a[href*="delete"] {
+    color: red;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"],
+.login-box button {
+    width: 100%;
+    margin: 5px 0 10px;
+    box-sizing: border-box;
+}
+
+.role-group, .link {
+    text-align: center;
+    margin-bottom: 10px;
+}
