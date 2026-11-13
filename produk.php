@@ -1,3 +1,27 @@
+<?php
+include 'koneksi.php';
+
+if (isset($_POST['simpan'])) {
+    $produk_id   = $_POST['ProdukID'];
+    $nama_produk = $_POST['NamaProduk'];
+    $harga       = $_POST['Harga'];
+    $stok        = $_POST['Stok'];
+
+    $sql = mysqli_query($koneksi, "INSERT INTO produk (ProdukID, NamaProduk, Harga, Stok) VALUES ('$produk_id', '$nama_produk', '$harga', '$stok')");
+
+    if ($sql) {
+        echo "<script>
+                alert('Barang berhasil ditambahkan!');
+                window.location.href = 'produk.php';
+              </script>";
+    } else {
+        echo "<script>
+                alert('Gagal menambahkan data!');
+              </script>";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -5,9 +29,9 @@
     <title>Stok Barang</title>
 </head>
 <body>
-
+    <link rel="stylesheet" href="style.css">
     <p><a href="index.php">Kembali</a></p>
-    <h2>isi dan Stok Barang</h2>
+    <h2>Isi dan Stok Barang</h2>
 
     <form action="" method="POST">
         <p>
@@ -27,25 +51,8 @@
             <input type="number" name="Stok" required>
         </p>
         <p>
-            <label for=""></label>
-        </p>
-        <p>
             <button type="submit" name="simpan">Tambah Barang</button>
         </p>
     </form>
-
-    <hr>
-
-    <h3>Daftar Barang</h3>
-    <table border="1" cellpadding="8" cellspacing="0">
-        <thead>
-            <tr>
-                <th>Produk ID</th>
-                <th>Nama Produk</th>
-                <th>Harga</th>
-                <th>Stok</th>
-            </tr>
-        </thead>
-    </table>
 </body>
 </html>
